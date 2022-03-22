@@ -38,7 +38,7 @@ document.body.appendChild( renderer.domElement );
 //ship
 const shootLight = new THREE.SpotLight( 0x00ff00, 1);
 shootLight.castShadow = true;
-var texture2 = new THREE.TextureLoader().load('./metal.jpg');
+var texture2 = new THREE.TextureLoader().load('imgs/metal.jpg');
 var material2 = new THREE.MeshPhongMaterial( { 
   map: texture2,
 side: THREE.DoubleSide
@@ -48,7 +48,7 @@ const ship = new THREE.Mesh( geometry, material2 );
 ship.position.y = -35;
 
 //enemies
-var alienTexture = new THREE.TextureLoader().load('./ship.jpg');
+var alienTexture = new THREE.TextureLoader().load('imgs/ship.jpg');
 var alienMaterial2 = new THREE.MeshPhongMaterial( { 
   map: alienTexture,
 side: THREE.DoubleSide
@@ -95,7 +95,7 @@ const shoot = () =>{
   audio.pause();// ensure sound is not already playing 
   audio.currentTime = 0; //reset time
   audio.play();
-  var bulletTexture = new THREE.TextureLoader().load('./bullet.jpg');
+  var bulletTexture = new THREE.TextureLoader().load('imgs/bullet.jpg');
   var bulletMaterial = new THREE.MeshPhongMaterial({ 
     map: bulletTexture,
   side: THREE.DoubleSide
@@ -155,9 +155,9 @@ const getRandomStartingPlace = () =>{
 
 
 //sound
-var audio = new Audio("./blast.wav");
-var enemyDeathSound = new Audio('./blastEnemy.wav');
-var song = new Audio('./gameSong2.wav'); 
+var audio = new Audio("sfx/blast.wav");
+var enemyDeathSound = new Audio('sfx/blastEnemy.wav');
+var song = new Audio('sfx/gameSong2.wav'); 
 song.volume = 0.38;
 if(typeof song.loop == 'boolean')
 {
